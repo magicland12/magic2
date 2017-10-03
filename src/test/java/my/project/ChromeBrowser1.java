@@ -25,6 +25,7 @@ public class ChromeBrowser1 {
         driver.findElement(By.xpath("//span[text()='Reports']")).click();
         driver.findElement(By.xpath("//span[text()='Time Offs']")).click();
 
+        System.out.println("Test");
 
 
         }
