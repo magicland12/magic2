@@ -1,14 +1,20 @@
 package my.project;
 
 
+import org.apache.bcel.generic.Select;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ChromeBrowser1 {
+
+
+
 
     public static void main (String[] args){
 
@@ -25,7 +31,17 @@ public class ChromeBrowser1 {
         driver.findElement(By.xpath("//span[text()='Reports']")).click();
         driver.findElement(By.xpath("//span[text()='Time Offs']")).click();
 
-        System.out.println("Test");
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//label[text()='Reports / Time Offs']")));
+
+
+
+        //label[text()='Reports / Time Offs']
+
+        //new Select (driver.findElement(By.id("designation"))).selectByVisibleText("Programmer ");
+
+
+        ////select[@name='resourceForm:offices']
 
 
         }
